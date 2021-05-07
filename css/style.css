@@ -1,0 +1,537 @@
+html{
+    scroll-behavior: smooth;
+} 
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background: url('../assets/home-background.png');
+}
+
+*{
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 500;
+}
+
+:root{
+
+    /**--------------Theme Font-Family---------------**/
+    --Abel: 'Abel',cursive;
+    --Anton: 'Anton',cursive;
+    --Josefin: 'Josefin',cursive;
+    --Lexend: 'Lexend',cursive;
+    --Livvic: 'Livvic',cursive;
+    --Roboto: 'Roboto',cursive; 
+
+    /**------------Gradient Color---------------**/    
+
+    --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    --deep-blue: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+    --pink: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+
+    /**----------------Theme Colors-------------**/
+
+    --text-gray: #3f4954;
+    --text-light: #686666da;
+    --bg-color: #0f0f0f;
+    --white: #ffffff;
+    --midnight: #104f55;
+
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    background-color: black;
+    position: sticky; 
+}
+
+nav .menu{
+    display: flex;
+}
+
+nav .menu li a{
+    height: 50px;
+    line-height: 65px;
+    margin: 0px;
+    padding: 0px 20px;
+    display: flex;
+    font-size: 0.99rem;
+    font-family: var(--Abel);
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.logo, .title{
+    display: flex;
+    color: white;
+    padding: 0 15px;
+    font-family: var(--Lexend);
+    line-height: center;
+}
+
+nav .logo img{
+    margin: 15px 0;
+}
+
+.title h1{
+    font-size: 2rem;
+    line-height: 85px;
+    font-family: var(--Anton);
+    font-weight: normal;
+}
+
+.search{
+    width: 270px;
+    height: 40px;
+    background-color: rgba(34, 34, 34, 0.8);
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 0px 20px;
+    align-items: center;
+    padding-left: 30px;
+    margin-right: 40px;
+}
+
+.search input{
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    line-height: center;
+    color: white;
+}
+
+.search i{
+    color: white;
+    line-height: center;
+}
+
+nav .menu li a:hover{
+    background-color: rgb(0, 0, 94);
+    color: white;
+    box-shadow: 10px 15px 35px rgba(53, 53, 53, 0.1);
+    transition: all ease 0.2s;
+}
+
+.menu-toggle{
+    position: fixed;
+    right: 15px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    background: rgba(52, 58, 64, 0.5);
+    line-height: 50px;
+    z-index: 999;
+}
+
+.menu-toggle:focus,
+.menu-toggle:hover{
+    color: #fff;
+}
+
+.menu-toggle.menu-toggle:hover{
+    background: #343a40;
+}
+
+#sidebar-wrapper{
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    transition: all 0.4s ease 0s;
+    transform: translateX(250px);
+    background: #1a1a2e;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.sidebar-nav{
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    font-family: var(--Abel);
+    font-weight: 500;
+}
+
+.sidebar-nav li.sidebar-nav-item a{
+    display: block;
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.sidebar-nav li a:hover{
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus{
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand{
+    font-size: 2rem;
+    background: rgba(52, 58, 64, 0.1);
+    height: 80px;
+    line-height: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+.sidebar-nav > .sidebar-brand a{
+    color: #fff;
+}
+
+.sidebar-nav > .sidebar-brand a:hover{
+    color: #fff;
+    background: none;
+}
+
+#sidebar-wrapper.active{
+    right: 250px;
+    width: 250px;
+    transition: all 0.4s ease 0s;
+}
+
+
+
+.masthead{
+    min-height: 40rem;
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url(../assets/BackgroundImages/BlackWidow-compressed.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow: inset 120px 100px 250px #000, inset -120px -100px 250px #000;
+}
+
+.masthead h1{
+    text-transform: uppercase;
+    font-size: 3rem;
+    padding-top: 25rem;
+    margin: 0;
+    padding-top: 10%;
+    color: #fff;
+    font-family: var(--Abel);
+
+}
+
+.masthead .mb-5 em{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+@media (min-width : 992px){
+    .masthead{
+        height: 100vh;
+    }
+    .masthead h1{
+        font-size: 5.5rem;
+    }
+}
+
+.btn-x1{
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    background-color: rgb(0, 0, 66);
+    border: none;
+    color: #fff; 
+}
+
+.btn-x1:hover{
+    background-color: rgb(0, 0, 87);
+}
+
+
+
+
+.Container{
+    margin: 2% 2% 0 3%;
+}
+
+.Movies img{
+    margin-right: 1%;
+    margin-bottom: 10%;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: -4px 4px 5px 0 #000;
+    transition: 0.8s;
+}
+
+.Movies img:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.Container h2{
+    margin-bottom: 2%;
+    color: #f3e6e3;
+}
+
+/**--------------------------Footer-------------------------**/
+
+footer{
+    height: 100%;
+    background: var(--bg-color);
+    position: relative;
+    margin-top: 3rem;
+}
+
+footer .container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* (or) 25% 25% 25% 25% (or) 1fr 1fr 1fr 1fr */
+}
+
+footer .container > div{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 3rem 0.9rem;
+}
+
+footer .container h2{
+    color: var(--white);
+}
+
+footer .about-us{
+    color: gray;
+}
+
+footer .newsletter .form-elements{
+    background: var(--bg-color);
+    display: inline-block;
+}
+
+footer .newsletter .form-elements input{
+    padding: 0.5rem 0.7rem;
+    border: none;
+    background: transparent;
+    color: var(--white);
+    font-family: var(--Abel);
+    font-size: 1rem;
+    width: 70%;
+}
+
+footer .newsletter .form-elements span{
+    background: var(--deep-blue);
+    padding: 0.5rem 0.7rem;
+    cursor: pointer;
+}
+
+footer .newsletter p{
+    color: gray;
+}
+
+footer .instagram div > img{
+    display: inline-block;
+    width: 25%;
+    height: 50%;
+    margin: 0.3rem 0.4rem;
+}
+
+footer .follow div i{
+    color: var(--white);
+    padding: 0 0.4rem;
+}
+
+footer .follow p{
+    color: gray;
+}
+
+footer .rights{
+    justify-content: center;
+    font-family: var(--Abel);
+    text-align: center;
+}
+
+footer .rights h4 a{
+    color: var(--white);
+}
+
+footer .rights .text-grey{
+    color: gray;
+    font-size: 1.5rem;
+}
+
+footer .move-up{
+    position: absolute;
+    right: 6%;
+    top: 50%;
+}
+
+footer .move-up span{
+    color: var(--midnight);
+}
+
+footer .move-up span:hover{
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+/**--------------x------------Footer---------------x----------**/
+
+
+.scroll-to-top{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    background: rgba(52, 58, 64, 0.5);
+    line-height: 45px;
+    font-size: 23px;
+    display: "";
+}
+
+.scroll-to-top:focus,
+.scroll-to-top:hover{
+    color: whitesmoke;
+}
+
+.scroll-to-top:hover{
+    background: #343a40;
+}
+
+.scroll-to-top i{
+    font-weight: 800;
+}
+
+
+/**----------------Viewport less than equal to 1130px---------------**/
+
+@media only screen and (max-width: 1130px){
+    .footer{
+        width: 100%;
+    }
+    .footer .container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/**--------x--------Viewport less than equal to 1130px---------x------**/
+
+
+/**----------------Viewport less than equal to 750px---------------**/
+
+@media only screen and (max-width: 750px){
+    .footer{
+        width: 100%;
+    }
+    .footer .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .masthead h1{
+        font-size: 2rem;
+    }
+    .masthead .mb-5 em{
+        font-size: 1rem;
+    }
+    .btn-x1{
+        font-size: 0.8rem;
+    }
+    nav .menu{
+        display: none;
+    }
+    nav .search{
+        display: none;
+    }
+    .masthead{
+        min-height: 0rem;
+        display: table;
+        width: 100%;
+        height: 100%;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+        background-position: center;
+        background-size: cover;
+    }
+    .masthead h1{
+        padding-top: 10rem;
+    }
+    footer .rights .text-grey{
+        font-size: 1rem;
+    }
+}
+
+/**--------x--------Viewport less than equal to 750px--------x-------**/
+
+
+/**----------------Viewport less than equal to 520px---------------**/
+
+@media only screen and (max-width: 520px){
+    .footer{
+        width: 100%;
+    }
+    .footer .rights{
+        padding: 0 1.4rem;
+        text-align: center;
+    }
+    .masthead h1{
+        font-size: 2rem;
+    }
+    .masthead .mb-5 em{
+        font-size: 1rem;
+    }
+    .btn-x1{
+        font-size: 0.8rem;
+    }
+    nav .menu{
+        display: none;
+    }
+    nav .search{
+        display: none;
+    }
+    .masthead{
+        min-height: 0rem;
+        display: table;
+        width: 100%;
+        height: 100%;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+    }
+    .masthead h1{
+        padding-top: 10rem;
+    }
+    footer .rights .text-grey{
+        font-size: 1rem;
+    }
+}
+
+/**--------x--------Viewport less than equal to 520px--------x-------**/
+

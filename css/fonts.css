@@ -1,0 +1,45 @@
+/**--------Font-famliy : Abel-----**/
+@font-face{
+    font-family: Abel;
+    src: url('../fonts/Abel/Abel-Regular.ttf');
+}
+
+/**--------Font-famliy : Anton-----**/
+@font-face{
+    font-family: Anton;
+    src: url('../fonts/Anton/Anton-Regular.ttf');
+}
+
+/**--------Font-famliy : Josefin-----**/
+@font-face{
+    font-family: Josefin;
+    src: url('../fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf');
+}
+
+/**--------Font-famliy : Lexend-----**/
+@font-face{
+    font-family: Lexend;
+    src: url('../fonts/Lexend_Deca/LexendDeca-Regular.ttf');
+}
+
+/**--------Font-famliy : Livvic-----**/
+@font-face{
+    font-family: Livvic;
+    src: url('../fonts/Livvic/Livvic-Regular.ttf');
+}
+
+/**--------Font-famliy : Roboto-----**/
+@font-face{
+    font-family: Roboto;
+    src: url('../fonts/Roboto/Roboto-Medium.ttf');
+}
+
+
+
+
+
+
+
+
+
+
